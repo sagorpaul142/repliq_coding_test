@@ -10,6 +10,7 @@ const inputVariants = cva(
       variant: {
         default: "h-10 bg-background ring-offset-background focus-visible:ring-2 focus-visible:ring-offset-2",
         ny: "h-10 bg-transparent shadow-sm transition-colors focus-visible:ring-1",
+        bless: "h-10 bg-transparent border-0 transition-colors focus-visible:ring-0",
       },
     },
     defaultVariants: {

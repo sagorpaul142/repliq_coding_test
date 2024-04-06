@@ -25,13 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className={cn(
-      "min-h-screen bg-background font-sans antialiased bg-[#F8F8F8]",
+      "min-h-screen",
       fontSans.variable
     )}>
-    <Header/>
     {children}
-    <Newsletter/>
-    <Footer/>
     </body>
     </html>
   );
