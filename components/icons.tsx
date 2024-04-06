@@ -1,12 +1,14 @@
 import {
   ChevronLeft, ChevronRight,
-  LucideProps, Mail,
+  LucideProps, Mail, ShoppingCart, Star,
 } from "lucide-react"
 
 export const Icons = {
   email: Mail,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
+  star:Star,
+  shoppingCart:ShoppingCart,
   logo: (props: LucideProps) => (
     <img className="mx-auto h-8 w-8" src="images/repliq2x-logo.png" alt="logo"/>
   ),
