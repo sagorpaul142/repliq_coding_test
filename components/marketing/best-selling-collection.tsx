@@ -17,7 +17,7 @@ const BestSellingCollection = () => {
 
             <article className="bg-slate-50 p-8">
               <div className="">
-                <h2 className="text-xl text-gray-600">Mens' Scotch</h2>
+                <h2 className="text-xl text-gray-600">Mens Scotch</h2>
                 <p className="mt-2 text-xl font-semibold text-gray-800"></p>
               </div>
               <div className="mt-8 flex items-center justify-center md:mt-24">
@@ -27,7 +27,7 @@ const BestSellingCollection = () => {
 
             <article className="bg-slate-50 p-8">
               <div className="">
-                <h2 className="text-xl text-gray-600">Mens' Red</h2>
+                <h2 className="text-xl text-gray-600">Mens Red</h2>
                 <p className="mt-2 text-xl font-semibold text-gray-800"></p>
               </div>
               <div className="mt-8 flex items-center justify-center md:mt-24">
@@ -37,7 +37,7 @@ const BestSellingCollection = () => {
 
             <article className="bg-slate-50 p-8">
               <div className="">
-                <h2 className="text-xl text-gray-600">Mens' Punk</h2>
+                <h2 className="text-xl text-gray-600">Mens Punk</h2>
                 <p className="mt-2 text-xl font-semibold text-gray-800"></p>
               </div>
               <div className="mt-8 flex items-center justify-center md:mt-24">
@@ -50,7 +50,7 @@ const BestSellingCollection = () => {
 
             <article className="bg-slate-50 p-8">
               <div>
-                <h2 className="text-xl text-gray-600">Mens' Black</h2>
+                <h2 className="text-xl text-gray-600">Mens Black</h2>
                 <p className="mt-2 text-xl font-semibold text-gray-800"></p>
               </div>
               <div className="mt-28 flex items-center justify-center md:mt-3">
@@ -60,7 +60,7 @@ const BestSellingCollection = () => {
 
             <article className="bg-slate-50 p-8">
               <div>
-                <h2 className="text-xl text-gray-600">Womens' Brown</h2>
+                <h2 className="text-xl text-gray-600">Womens Brown</h2>
                 <p className="mt-2 text-xl font-semibold text-gray-800"></p>
               </div>
               <div className="mt-28 flex items-center justify-center md:mt-1">
