@@ -119,9 +119,9 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className="relative">
-                    <Link href="/home">
+                    <Link href="/dashboard">
                     <span className="flex items-center text-sm text-qblack font-600 cursor-pointer ">
-                      About
+                      Dashboard
                       </span>
                     </Link>
                   </li>

@@ -59,14 +59,26 @@ const people = [
 ]
 
 type FormDataStep1 = z.infer<typeof userSchema>;
+type FormData = z.infer<typeof userSchema>;
 const CustomerTable = () => {
   const [open, setOpen] = useState(false)
+  const [openAddUser, setOpenAddUser] = useState(false)
   const [alert, setAlert] = useState(false)
   const formStep1 = useForm<FormDataStep1>({
     resolver: zodResolver(userSchema),
+    defaultValues: {
+      name: "Lindsay Walton",
+      title: "Front-end Developer",
+      email: "lindsay.walton3@example.com",
+      role: 'member'
+    }
+  });
+  const addUser = useForm<FormData>({
+    resolver: zodResolver(userSchema),
   });
   const onsubmit = () => {
-
+  }
+  const onSaveData = () => {
   }
   return (
     <>
@@ -74,6 +86,15 @@ const CustomerTable = () => {
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
             <h1 className="text-base font-semibold leading-6 text-gray-900">Users List</h1>
+          </div>
+          <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+            <button
+              onClick={() => setOpenAddUser(true)}
+              type="button"
+              className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-0 focus-visible:outline-offset-0 focus-visible:outline-indigo-600"
+            >
+              Add user
+            </button>
           </div>
         </div>
         <div className="mt-4 flow-root">
@@ -205,7 +226,7 @@ const CustomerTable = () => {
                       name="email"
                       render={({field}) => (
                         <FormItem>
-                          <FormLabel>email</FormLabel>
+                          <FormLabel>Email</FormLabel>
                           <FormControl>
                             <Input
                               variant="ny"
@@ -219,6 +240,110 @@ const CustomerTable = () => {
                     />
                     <FormField
                       control={formStep1.control}
+                      name="role"
+                      render={({field}) => (
+                        <FormItem>
+                          <FormLabel>Type</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select an user role"/>
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="member">Member</SelectItem>
+                              <SelectItem value="admin">Admin</SelectItem>
+                              <SelectItem value="manager">Manager</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage/>
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </form>
+              </Form>
+              <SheetFooter className="mt-5">
+                <SheetClose asChild>
+                  <Button type="submit">Save changes</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+        )
+      }
+
+      {
+        openAddUser && (
+          <Sheet open={openAddUser} onOpenChange={setOpenAddUser}>
+            <SheetContent className="sm:max-w-[50vw] overflow-y-auto">
+              <SheetHeader>
+                <SheetTitle>Add User</SheetTitle>
+                <SheetDescription>
+                  Make changes to your profile here. Click save when you&apos;re done.
+                </SheetDescription>
+              </SheetHeader>
+              <Form {...addUser}>
+                <form
+                  onSubmit={addUser.handleSubmit(onSaveData)}
+                >
+                  <div className="grid gap-4 py-4">
+                    <FormField
+                      control={addUser.control}
+                      name="name"
+                      render={({field}) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              variant="ny"
+                              placeholder="Name"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage/>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={addUser.control}
+                      name="title"
+                      render={({field}) => (
+                        <FormItem>
+                          <FormLabel>Title</FormLabel>
+                          <FormControl>
+                            <Input
+                              variant="ny"
+                              placeholder="Audit Name"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage/>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={addUser.control}
+                      name="email"
+                      render={({field}) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              variant="ny"
+                              placeholder="Audit Name"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage/>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={addUser.control}
                       name="role"
                       render={({field}) => (
                         <FormItem>

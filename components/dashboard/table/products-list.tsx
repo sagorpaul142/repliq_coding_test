@@ -53,24 +53,19 @@ const tableData = [
 
 const headers = [
   {
-    name: 'Product Name',
-    styles: 'min-w-[300px]',
+    name: 'Product Name'
   },
   {
-    name: 'Category',
-    styles: 'min-w-[90px]',
+    name: 'Category'
   },
   {
-    name: 'Price',
-    styles: 'min-w-[90px]',
+    name: 'Price'
   },
   {
-    name: 'Sold',
-    styles: 'min-w-[90px]',
+    name: 'Sold'
   },
   {
-    name: 'Profit',
-    styles: 'min-w-[90px]',
+    name: 'Profit'
   },
 ]
 const ProductsList = () => {
@@ -94,7 +89,7 @@ const ProductsList = () => {
                 <tr className='border-b border-stroke dark:border-dark-3'>
                   {headers.map((header, index) => (
                     <th
-                      className={`py-5 px-4 last:pr-8 ${header.styles}`}
+                      className={`py-5 px-4 last:pr-8`}
                       key={index}
                     >
                       <p className='text-base font-medium text-left text-dark dark:text-white'>
