@@ -4,12 +4,13 @@ import { Dialog, Menu, Transition } from '@headlessui/react'
 import { classNames } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navigation = [
-  {name: 'Dashboard', href: '/dashboard', current: true},
-  {name: 'Customers', href: '/customers', current: false},
-  {name: 'Orders', href: '/orders', current: false},
-  {name: 'Products', href: '/product', current: false},
+  {name: 'Dashboard', href: '/dashboard', icon: 'home'},
+  {name: 'Customers', href: '/customers', icon: 'users'},
+  {name: 'Orders', href: '/orders', icon: 'order'},
+  {name: 'Products', href: '/product', icon: 'folder'},
 ]
 const userNavigation = [
   {name: 'Your profile', href: '#'},
@@ -17,6 +18,7 @@ const userNavigation = [
 ]
 const DashboardSidebar = ({children}: { children: ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const pathName = usePathname()
   return (
     <div>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -63,7 +65,7 @@ const DashboardSidebar = ({children}: { children: ReactNode }) => {
                 {/* Sidebar component, swap this element with another sidebar if you like */}
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                   <div className="flex h-16 shrink-0 items-center">
-                    <Icons.logo />
+                    <Icons.logo/>
                   </div>
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -74,19 +76,16 @@ const DashboardSidebar = ({children}: { children: ReactNode }) => {
                               <a
                                 href={item.href}
                                 className={classNames(
-                                  item.current
+                                  item.href === pathName
                                     ? 'bg-gray-50 text-indigo-600'
                                     : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                                   'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                 )}
                               >
-                                {/*<item.icon*/}
-                                {/*  className={classNames(*/}
-                                {/*    item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',*/}
-                                {/*    'h-6 w-6 shrink-0'*/}
-                                {/*  )}*/}
-                                {/*  aria-hidden="true"*/}
-                                {/*/>*/}
+                                {item.icon === 'home' && <Icons.home  className="h-6 w-6 shrink-0"/>}
+                                {item.icon === 'users' && <Icons.users  className="h-6 w-6 shrink-0"/>}
+                                {item.icon === 'order' && <Icons.order/>}
+                                {item.icon === 'folder' && <Icons.folder  className="h-6 w-6 shrink-0"/>}
                                 {item.name}
                               </a>
                             </li>
@@ -107,7 +106,7 @@ const DashboardSidebar = ({children}: { children: ReactNode }) => {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
           <div className="flex h-16 shrink-0 items-center">
-            <Icons.logo />
+            <Icons.logo/>
           </div>
           <nav className="flex flex-1 flex-col">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -118,19 +117,16 @@ const DashboardSidebar = ({children}: { children: ReactNode }) => {
                       <Link
                         href={item.href}
                         className={classNames(
-                          item.current
+                          item.href === pathName
                             ? 'bg-gray-50 text-indigo-600'
                             : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                           'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                         )}
                       >
-                        {/*<item.icon*/}
-                        {/*  className={classNames(*/}
-                        {/*    item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',*/}
-                        {/*    'h-6 w-6 shrink-0'*/}
-                        {/*  )}*/}
-                        {/*  aria-hidden="true"*/}
-                        {/*/>*/}
+                        {item.icon === 'home' && <Icons.home  className="h-6 w-6 shrink-0"/>}
+                        {item.icon === 'users' && <Icons.users  className="h-6 w-6 shrink-0"/>}
+                        {item.icon === 'order' && <Icons.order/>}
+                        {item.icon === 'folder' && <Icons.folder  className="h-6 w-6 shrink-0"/>}
                         {item.name}
                       </Link>
                     </li>
@@ -150,8 +146,6 @@ const DashboardSidebar = ({children}: { children: ReactNode }) => {
             <Icons.menu className="h-6 w-6" aria-hidden="true"/>
           </button>
 
-          {/* Separator */}
-          {/*<div className="h-6 w-px bg-gray-200 lg:hidden" aria-hidden="true"/>*/}
 
           <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
             <div className="flex items-center justify-end w-full gap-x-4 lg:gap-x-6">
@@ -169,7 +163,6 @@ const DashboardSidebar = ({children}: { children: ReactNode }) => {
                       <span className="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">
                         Tom Cook
                       </span>
-                    {/*<ChevronDownIcon className="ml-2 h-5 w-5 text-gray-400" aria-hidden="true"/>*/}
                     </span>
                 </Menu.Button>
                 <Transition
