@@ -6,7 +6,13 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
-const MobileFilter = ({mobileFiltersOpen, setMobileFiltersOpen, filters}) => {
+interface mobileFilterProps {
+  mobileFiltersOpen: boolean
+  setMobileFiltersOpen: () => void
+  filters: any
+}
+
+const MobileFilter: React.FC<mobileFilterProps> = ({mobileFiltersOpen, setMobileFiltersOpen, filters}) => {
   return (
     <Transition.Root show={mobileFiltersOpen} as={Fragment}>
       <Dialog as="div" className="relative z-40 lg:hidden" onClose={setMobileFiltersOpen}>

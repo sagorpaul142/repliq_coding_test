@@ -1,7 +1,7 @@
 import {
   ChevronDown,
   ChevronLeft, ChevronRight, Filter,
-  LucideProps, Mail, Minus, Plus, ShoppingCart, Star, LayoutGrid, X
+  LucideProps, Mail, Minus, Plus, ShoppingCart, Star, LayoutGrid, X, Heart
 } from "lucide-react"
 
 export const Icons = {
@@ -16,6 +16,7 @@ export const Icons = {
   minus: Minus,
   LayoutGrid: LayoutGrid,
   close: X,
+  heart: Heart,
   logo: (props: LucideProps) => (
     <img className="mx-auto h-8 w-8" src="images/repliq2x-logo.png" alt="logo"/>
   ),

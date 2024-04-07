@@ -38,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({product}) => {
         />
       </CardHeader>
       <CardContent>
-        <Link href={`/product/${product.id}`}>
+        <Link href={`/products/${product.id}`}>
           <h5 className="text-md font-semibold tracking-tight text-slate-900 line-clamp-1">
             {product.title}
           </h5>
