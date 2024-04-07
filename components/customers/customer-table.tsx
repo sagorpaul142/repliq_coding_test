@@ -202,7 +202,7 @@ const CustomerTable = () => {
                     />
                     <FormField
                       control={formStep1.control}
-                      name="Email"
+                      name="email"
                       render={({field}) => (
                         <FormItem>
                           <FormLabel>email</FormLabel>
