@@ -6,7 +6,7 @@ import { classNames } from "@/lib/utils";
 
 interface mobileFilterProps {
   mobileFiltersOpen: boolean
-  setMobileFiltersOpen: () => void
+  setMobileFiltersOpen: (open: boolean) => void
   filters: any
 }
 
