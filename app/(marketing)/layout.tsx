@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Mulish as FontSans } from "next/font/google";
 import "../globals.css";
 
 import { cn } from "@/lib/utils"
@@ -9,6 +9,7 @@ import Newsletter from "@/components/marketing/newsletter";
 
 const fontSans = FontSans({
   subsets: ["latin"],
+  weight:["200","300","400","500","600","700","800","900"],
   variable: "--font-sans",
 })
 

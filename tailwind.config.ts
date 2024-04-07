@@ -80,6 +80,10 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
     },
+    backgroundPosition: {
+      'center-right': 'center right',
+      'center-center': 'center center',
+    }
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

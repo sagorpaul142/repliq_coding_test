@@ -5,20 +5,17 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import products from "@/components/marketing/slider/newArrivalsSlider.json"
 import ProductCard from "@/components/marketing/card/product-card";
 
-const NewArrivalsSlider = () => {
+const TrendingSlider = () => {
   const plugin = React.useRef(
-    Autoplay({delay: 1000, stopOnInteraction: true})
+    Autoplay({delay: 4000, stopOnInteraction: true})
   )
   return (
-    <div className="container bg-white mb-14">
-
+    <div className="container mb-14">
       <div className="mt-4">
-        <h3 className="font-medium text-2xl">
-          <span className="text-[#00cad7] mr-2">New</span>
-          Arrivals
+        <h3 className="font-medium text-2xl border-b border-[#ccc] pb-5 mb-3">
+          Trending Products
         </h3>
       </div>
-
       <Carousel
         opts={{
           align: "start",
@@ -41,4 +38,4 @@ const NewArrivalsSlider = () => {
   );
 };
 
-export default NewArrivalsSlider;
+export default TrendingSlider;
