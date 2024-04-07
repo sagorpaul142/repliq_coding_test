@@ -14,18 +14,17 @@ import {
 import { Search } from "lucide-react";
 import { classNames } from "@/lib/utils";
 import { Icons } from "@/components/icons";
+import { usePathname } from "next/navigation";
 
 const navigation = [
-  {name: 'Dashboard', href: '#', current: true},
-  {name: 'Team', href: '#', current: false},
-  {name: 'Projects', href: '#', current: false},
-  {name: 'Calendar', href: '#', current: false},
-  {name: 'Documents', href: '#', current: false},
-  {name: 'Reports', href: '#', current: false},
+  {name: 'Home', href: '/home'},
+  {name: 'Dashboard', href: '/dashboard'},
+  {name: 'Products', href: '/products'},
 ]
 
 const SubHeader = () => {
     const [open, setOpen] = useState(false)
+  const pathName = usePathname()
     return (
       <>
         <div className="w-full h-[86px] bg-white lg:block hidden">
@@ -147,7 +146,7 @@ const SubHeader = () => {
                     <SheetHeader>
                         <div className="flex shrink-0 items-center justify-center py-4">
                             <SheetClose asChild>
-                                <Link href="/">
+                                <Link href="/home">
                                     <Image
                                         width={56}
                                         height={56}
@@ -181,15 +180,16 @@ const SubHeader = () => {
                               {navigation.map((item) => (
                                 <SheetClose asChild key={item.name}>
                                   <li key={item.name}>
-                                    <a
+                                    <Link
                                       href={item.href}
+                                      onClick={() => setOpen(false)}
                                       className={classNames(
-                                        item.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
+                                        item.href === pathName ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                                         'group flex gap-x-3 rounded-md p-2 pl-3 text-sm leading-6 font-semibold'
                                       )}
                                     >
                                       {item.name}
-                                    </a>
+                                    </Link>
                                   </li>
                                 </SheetClose>
                               ))}
