@@ -15,7 +15,7 @@ import {
   ShoppingBasket,
   Users,
   DollarSign,
-  EllipsisVertical, Pencil, Trash2, Menu
+  EllipsisVertical, Pencil, Trash2, Menu, Eye
 } from "lucide-react"
 
 export const Icons = {
@@ -38,6 +38,7 @@ export const Icons = {
   pencil: Pencil,
   delete: Trash2,
   menu: Menu,
+  eye: Eye,
   logo: (props: LucideProps) => (
     <img className="mx-auto h-8 w-8" src="images/repliq2x-logo.png" alt="logo"/>
   ),
