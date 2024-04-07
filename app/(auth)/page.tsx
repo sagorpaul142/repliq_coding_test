@@ -1,5 +1,3 @@
-import BestSeller from "@/components/marketing/best-seller";
-import BestSellingCollection from "@/components/marketing/best-selling-collection";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

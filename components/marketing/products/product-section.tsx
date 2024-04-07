@@ -1,3 +1,4 @@
+"use client"
 import React, { Fragment, useState } from 'react';
 import SidebarFilter from "@/components/marketing/products/sidebar-filter";
 import ProductCardSection from "@/components/marketing/products/product-card-section";
@@ -64,10 +65,11 @@ const ProductSection = () => {
   return (
     <>
       {/* Mobile filter dialog */}
-      <MobileFilter filters={filters} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen}/>
+      <MobileFilter filters={filters} mobileFiltersOpen={mobileFiltersOpen}
+                    setMobileFiltersOpen={setMobileFiltersOpen}/>
 
       <main className="container">
-        <ProductsHeaderSection setMobileFiltersOpen={setMobileFiltersOpen} sortOptions={sortOptions} />
+        <ProductsHeaderSection setMobileFiltersOpen={setMobileFiltersOpen} sortOptions={sortOptions}/>
 
         <section aria-labelledby="products-heading" className="pb-24 pt-6">
 

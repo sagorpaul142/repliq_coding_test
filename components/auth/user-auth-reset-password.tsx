@@ -50,7 +50,7 @@ const UserAuthResetPassword = ({
           <div>
             <Label
               htmlFor="phone"
-              className="block text-sm font-semibold leading-6"
+              className="block text-sm leading-6"
             >
               Phone number
             </Label>
