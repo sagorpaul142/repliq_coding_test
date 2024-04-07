@@ -3,11 +3,8 @@ import { Tab } from "@headlessui/react";
 import Review from "@/components/marketing/single-product/review";
 import ProductFaq from "@/components/marketing/single-product/product-faq";
 import ProductLicense from "@/components/marketing/single-product/product-license";
+import { classNames } from "@/lib/utils";
 
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 const ProductReviewSection = () => {
   return (

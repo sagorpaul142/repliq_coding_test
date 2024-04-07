@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react';
 import { Dialog, Disclosure, Transition } from "@headlessui/react";
 import { Icons } from "@/components/icons";
+import { classNames } from "@/lib/utils";
 
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ')
-}
 
 interface mobileFilterProps {
   mobileFiltersOpen: boolean

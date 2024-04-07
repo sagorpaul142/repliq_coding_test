@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icons } from "@/components/icons";
+import { classNames } from "@/lib/utils";
 
 const reviews = {
   average: 4,
@@ -31,9 +32,6 @@ const reviews = {
   ],
 }
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 const Review = () => {
   return (
     <>

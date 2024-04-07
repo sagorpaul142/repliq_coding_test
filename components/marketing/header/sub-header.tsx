@@ -12,6 +12,7 @@ import {
   SheetHeader,
 } from "@/components/ui/sheet"
 import { Search } from "lucide-react";
+import { classNames } from "@/lib/utils";
 
 const navigation = [
   {name: 'Dashboard', href: '#', current: true},
@@ -21,10 +22,6 @@ const navigation = [
   {name: 'Documents', href: '#', current: false},
   {name: 'Reports', href: '#', current: false},
 ]
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ')
-}
 
 const SubHeader = () => {
     const [open, setOpen] = useState(false)

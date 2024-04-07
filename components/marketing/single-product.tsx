@@ -1,8 +1,9 @@
 "use client"
 import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
-import ProductReviewSection from "@/components/marketing/product-review- section";
+import ProductReviewSection from "@/components/marketing/product-review-section";
 import ProductInfo from "@/components/marketing/single-product/product-info";
+import { classNames } from "@/lib/utils";
 
 const product = {
   images: [
@@ -32,9 +33,7 @@ const product = {
     },
   ],
 }
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+
 
 const SingleProduct = () => {
   return (

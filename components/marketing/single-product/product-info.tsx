@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Icons } from "@/components/icons";
 import { Disclosure, RadioGroup } from "@headlessui/react";
+import { classNames } from "@/lib/utils";
 
 const product = {
   name: 'Zip Tote Basket',
@@ -58,9 +59,6 @@ const product = {
   ],
 }
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 const ProductInfo = () => {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
