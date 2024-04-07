@@ -153,13 +153,6 @@ const CustomerTable = () => {
                               <Icons.pencil className="mr-2 h-4 w-4"/>
                               Edit
                             </DropdownMenuItem>
-                            <DropdownMenuSeparator/>
-                            <DropdownMenuItem
-                              className="flex cursor-pointer items-center"
-                            >
-                              <Icons.delete className="mr-2 h-4 w-4"/>
-                              Delete
-                            </DropdownMenuItem>
                           </DropdownMenuContent>
                         </DropdownMenu>
                       </td>

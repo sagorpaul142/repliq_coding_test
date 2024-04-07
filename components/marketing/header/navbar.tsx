@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Link from "next/link";
 import {
@@ -9,8 +10,10 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Icons } from "@/components/icons";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathName = usePathname()
   return (
     <div className="w-full bg-[#48B7E9] h-[60px] relative z-30  quomodo-shop-nav-bar lg:block hidden">
       <div className="container mx-auto h-full">
@@ -105,14 +108,14 @@ const Navbar = () => {
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                   <li className="relative">
-                    <Link href="/home">
+                    <Link href="/home" className={`${pathName === '/home' ? 'font-bold text-white' : ''}`}>
                     <span className="flex items-center text-sm text-qblack font-600 cursor-pointer ">
                       Homepage
                       </span>
                     </Link>
                   </li>
                   <li className="relative">
-                    <Link href="/products">
+                    <Link href="/products" className={`${pathName === '/products' ? 'font-bold text-white' : ''}`}>
                     <span className="flex items-center text-sm text-qblack font-600 cursor-pointer ">
                       Products
                       </span>
