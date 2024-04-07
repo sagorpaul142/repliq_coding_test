@@ -1,15 +1,19 @@
 import React from 'react';
 
-const SidebarFilter = ({filters}) => {
+interface SidebarFilterProps{
+  filters:any
+}
+
+const SidebarFilter:React.FC<SidebarFilterProps> = ({filters}) => {
   return (
     <div className="hidden lg:block">
       <form className="space-y-10 divide-y divide-gray-200">
-        {filters.map((section, index) => (
+        {filters.map((section:any, index:number) => (
           <div key={section.name} className={index === 0 ? '' : 'pt-10'}>
             <fieldset>
               <legend className="block text-sm font-medium text-gray-900">{section.name}</legend>
               <div className="space-y-3 pt-6">
-                {section.options.map((option, optionIdx) => (
+                {section.options.map((option:any, optionIdx:number) => (
                   <div key={option.value} className="flex items-center">
                     <input
                       id={`${section.id}-${optionIdx}`}

@@ -52,7 +52,7 @@ const MobileFilter: React.FC<mobileFilterProps> = ({mobileFiltersOpen, setMobile
 
               {/* Filters */}
               <form className="mt-4">
-                {filters.map((section) => (
+                {filters.map((section:any) => (
                   <Disclosure as="div" key={section.name} className="border-t border-gray-200 pb-4 pt-4">
                     {({open}) => (
                       <fieldset>
@@ -70,7 +70,7 @@ const MobileFilter: React.FC<mobileFilterProps> = ({mobileFiltersOpen, setMobile
                         </legend>
                         <Disclosure.Panel className="px-4 pb-2 pt-4">
                           <div className="space-y-6">
-                            {section.options.map((option, optionIdx) => (
+                            {section.options.map((option:any, optionIdx:number) => (
                               <div key={option.value} className="flex items-center">
                                 <input
                                   id={`${section.id}-${optionIdx}-mobile`}

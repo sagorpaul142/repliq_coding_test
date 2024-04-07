@@ -1,10 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import { Menu, Transition } from "@headlessui/react";
 import { Icons } from "@/components/icons";
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ')
+import { classNames } from "@/lib/utils";
+
+interface ProductHeaderProps {
+  setMobileFiltersOpen: (open: boolean) => void,
+  sortOptions: any,
 }
-const ProductsHeaderSection = ({setMobileFiltersOpen, sortOptions}) => {
+
+const ProductsHeaderSection: React.FC<ProductHeaderProps> = ({setMobileFiltersOpen, sortOptions}) => {
   return (
     <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-16">
       <h1 className="text-4xl font-bold tracking-tight text-gray-900">Products</h1>
@@ -34,8 +38,8 @@ const ProductsHeaderSection = ({setMobileFiltersOpen, sortOptions}) => {
             <Menu.Items
               className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div className="py-1">
-                {sortOptions.map((option) => (
-                  <Menu.Item key={option.name}>
+                {sortOptions.map((option: any, index: number) => (
+                  <Menu.Item key={index}>
                     {({active}) => (
                       <a
                         href={option.href}

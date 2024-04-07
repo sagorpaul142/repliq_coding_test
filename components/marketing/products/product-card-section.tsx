@@ -2,7 +2,18 @@ import React from 'react';
 import SingleProductCard from "@/components/marketing/products/single-product-card";
 import ProductPagination from "@/components/marketing/products/product-pagination";
 
-const products = [
+interface Product {
+  id: number,
+  name: string,
+  href: string,
+  price: string,
+  description: string,
+  options: string,
+  imageSrc: string,
+  imageAlt: string,
+}
+
+const products: Product[] = [
   {
     id: 1,
     name: 'Basic Tee 8-Pack',
@@ -68,8 +79,8 @@ const ProductCardSection = () => {
   return (
     <>
       <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
-        {products.map((product) => (
-          <SingleProductCard key={product.id} product={product}/>
+        {products.map((product:Product, index:number) => (
+          <SingleProductCard key={index} product={product}/>
         ))}
       </div>
       <ProductPagination/>

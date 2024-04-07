@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from "next/link";
 
-interface ProductCardProps {
-  id: 1,
+interface Product {
+  id: number,
   name: string,
   href: string,
   price: string,
@@ -10,6 +10,10 @@ interface ProductCardProps {
   options: string,
   imageSrc: string,
   imageAlt: string,
+}
+
+interface ProductCardProps {
+  product: Product;
 }
 
 const SingleProductCard: React.FC<ProductCardProps> = ({product}) => {
